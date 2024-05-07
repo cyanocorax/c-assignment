@@ -1,31 +1,34 @@
 package com.example.demo.entity;
 
 import lombok.AllArgsConstructor;
-import lombok.Data;
+import lombok.NoArgsConstructor;
+import lombok.Getter;
+import lombok.Setter;
 import jakarta.persistence.*;
 
 @Entity
 @Getter
 @Setter
 @AllArgsConstructor
+@NoArgsConstructor
 @Table(name = "students")
 public class StudentEntity {
 	@Id
 	@GeneratedValue
 	private int id;
 
-	@Column(nullable = false)
-	private int teacher_id;
+	@Column(name = "teacher_id", nullable = false)
+	private int teacherId;
 
-	@Column(nullable = false)
+	@Column(name = "name", nullable = false)
 	private String name;
 
-	@Column(nullable = false)
-	private String login_id;
+	@Column(name = "login_id", nullable = false)
+	private String loginId;
 
-	@Column(nullable = false)
-	private int class_id;
+	@Column(name = "class_id", nullable = false)
+	private int classId;
 
-	@Column(nullable = false)
-	private String class_name;
+	@Column(name = "class_name", nullable = false)
+	private String className;
 }
